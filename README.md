@@ -3,6 +3,30 @@ dopresskit
 
 presskit() - spend time making games, not press.
 
+Modifications
+=============
+This fork of the original allows developers to generate a presskit() site locally on their machine and host it on Amazon S3 whereas the original required an FTP site.
+
+**How to generate the static files for your presskit site:**
+1. Clone out this repository onto your local machine.
+2. [Install Vagrant](https://docs.vagrantup.com/v2/installation/index.html). We'll be using Vagrant to create a virtual development environment to configure our presskit site in.
+3. In the root directory of this repository, run `vagrant init`.
+4. Then, run `vagrant up`.
+5. Navigate to localhost:8080 and you should see the beginnings of your presskit site.
+6. Follow the instructions on the site. When modifying or adding files to your site, do so in your local presskit repository. [Vagrant will automatically sync these files to its development environment.](https://docs.vagrantup.com/v2/getting-started/synced_folders.html)
+7. When you've finished your site, SSH into the Vagrant environment by entering `vagrant ssh`.
+8. Navigate to your site's directory by entering `cd /vagrant`.
+9. Run the `generate-static-site.sh` script to generate your site's static files. These will be saved in a folder named 'localhost'.
+
+You can now upload these static files to your own site. If you have an Amazon account with an [S3 bucket configured for website hosting](http://docs.aws.amazon.com/AmazonS3/latest/dev/HowDoIWebsiteConfiguration.html), you can sync these files to the bucket by following the directions below:
+
+**How to sync your presskit site to Amazon S3:**
+1. If you're not there already, SSH into vagrant again and navigate to the /vagrant folder (steps 7 and 8 above).
+2. [Set your AWS access key and secret key as environment variables.](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-environment) This is necessary to provide AWS your credentials for syncing to your bucket.
+3. Run the `deploy-s3.sh` script, providing your bucket name as an argument. For example, `deploy-s3.sh presskit.mysite.com`
+
+And you're done!
+
 
 Simple. Fast. Free.
 ==========

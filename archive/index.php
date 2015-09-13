@@ -346,7 +346,7 @@ echo '							<h2 id="projects">'. tl('Projects') .'</h2>
 
 if ($handle = opendir('.')) {
 	while (false !== ($entry = readdir($handle))) {
-		if ($entry != "." && $entry != ".." && $entry != "lang" && substr($entry,0,1) != "_" && strpos($entry, ".") === FALSE && substr($entry,-4) != ".log" && substr($entry,0,6) != "images" && substr($entry,0,8) != "trailers" && substr($entry,0,9) != "error_log") {
+		if ($entry != "." && $entry != ".." && $entry != "lang" && substr($entry,0,1) != "_" && strpos($entry, ".") === FALSE && substr($entry,-4) != ".log" && substr($entry,0,6) != "images" && substr($entry,0,8) != "trailers" && substr($entry,0,9) != "error_log" && $entry != 'Vagrantfile' && $entry != 'LICENSE' && $entry != 'archive') {
 			echo '<li><a href="sheet.php?p='.$entry. str_replace('?', '&', $languageQuery).'">'.ucwords(str_replace("_", " ", $entry)).'</a></li>';
 		}
 	}
