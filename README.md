@@ -8,6 +8,7 @@ Modifications
 This fork of the original allows developers to generate a presskit() site locally on their machine and host it on Amazon S3 whereas the original required an FTP site.
 
 **How to generate the static files for your presskit site:**
+
 1. Clone out this repository onto your local machine.
 2. [Install Vagrant](https://docs.vagrantup.com/v2/installation/index.html). We'll be using Vagrant to create a virtual development environment to configure our presskit site in.
 3. In the root directory of this repository, run `vagrant init`.
@@ -21,6 +22,7 @@ This fork of the original allows developers to generate a presskit() site locall
 You can now upload these static files to your own site. If you have an Amazon account with an [S3 bucket configured for website hosting](http://docs.aws.amazon.com/AmazonS3/latest/dev/HowDoIWebsiteConfiguration.html), you can sync these files to the bucket by following the directions below:
 
 **How to sync your presskit site to Amazon S3:**
+
 1. If you're not there already, SSH into vagrant again and navigate to the /vagrant folder (steps 7 and 8 above).
 2. [Set your AWS access key and secret key as environment variables.](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-environment) This is necessary to provide AWS your credentials for syncing to your bucket.
 3. Run the `deploy-s3.sh` script, providing your bucket name as an argument. For example, `deploy-s3.sh presskit.mysite.com`
