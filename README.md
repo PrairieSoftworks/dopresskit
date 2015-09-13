@@ -16,7 +16,7 @@ This fork of the original allows developers to generate a presskit() site locall
 6. Follow the instructions on the site. When modifying or adding files to your site, do so in your local presskit repository. [Vagrant will automatically sync these files to its development environment.](https://docs.vagrantup.com/v2/getting-started/synced_folders.html)
 7. When you've finished your site, SSH into the Vagrant environment by entering `vagrant ssh`.
 8. Navigate to your site's directory by entering `cd /vagrant`.
-9. Run the `generate-static-site.sh` script to generate your site's static files. These will be saved in a folder named 'localhost'.
+9. Run the `generate-static-site.sh` script to generate your site's static files. These will be saved in a folder named 'localhost' in your local repository.
 
 You can now upload these static files to your own site. If you have an Amazon account with an [S3 bucket configured for website hosting](http://docs.aws.amazon.com/AmazonS3/latest/dev/HowDoIWebsiteConfiguration.html), you can sync these files to the bucket by following the directions below:
 
