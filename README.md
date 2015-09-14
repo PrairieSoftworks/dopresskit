@@ -5,7 +5,7 @@ presskit() - spend time making games, not press.
 
 Modifications
 =============
-This fork of the original allows developers to generate a presskit() site locally on their machine and host it on Amazon S3 whereas the original required an FTP site.
+This fork of the original allows developers to generate a presskit() site locally on their machine and host it on Amazon S3 whereas the original required a webserver and PHP.
 
 **How to generate the static files for your presskit site:**
 
